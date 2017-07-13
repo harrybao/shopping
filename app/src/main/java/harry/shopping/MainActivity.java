@@ -1,5 +1,6 @@
 package harry.shopping;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,10 +15,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class MainActivity extends AppCompatActivity {
     EditText search_goods;
     ListView goods_list;
     List<Map<String,Object>> list;
+
+
 
 
     @Override
@@ -26,12 +30,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         search_goods = (EditText) findViewById(R.id.search_goods);
         goods_list = (ListView) findViewById(R.id.goods_list);
+
         getData();
         SimpleAdapter adapter = new SimpleAdapter(this,list,R.layout.goods_item,new String[]{"image"
                 ,"name","view","goods_name","goods_view","goods_price"},new int[]{R.id.goods_image
                 ,R.id.name_text,R.id.view_text,R.id.goods_name_text,R.id.goods_view_text});
         goods_list.setAdapter(adapter);
         setListViewHeightBasedOnChildren(goods_list);
+
     }
     private  void getData(){
         list= new ArrayList<Map<String,Object>>();
